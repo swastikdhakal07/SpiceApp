@@ -44,7 +44,17 @@ class HomeScreen extends StatelessWidget {
             margin: const EdgeInsets.all(8.0),
             child: ListTile(
               //placeholder Icon as product image
-              leading: const Icon(Icons.shopping_bag),
+              leading: IconButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    //notify the user with added to cart message when clicked on the add to cart button
+                    SnackBar(
+                      content: Text('${products[index]['name']} added to cart'),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.add_shopping_cart),
+              ),
               //Name of the product in bold
               title: Text(
                 products[index]['name'].toString(),
