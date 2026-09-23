@@ -28,21 +28,25 @@ class MostPurchasedSection extends StatelessWidget {
                 name: 'Turmeric Powder',
                 weight: '500 g',
                 price: '3.99',
+                imagePath: 'assets/images/turmeric_powder.jpg',
               ),
               _MostPurchasedCard(
                 name: 'Cumin Powder',
                 weight: '250 g',
                 price: '3.99',
+                imagePath: 'assets/images/cumin_powder.jpg',
               ),
               _MostPurchasedCard(
                 name: 'Coriander Powder',
                 weight: '250 g',
                 price: '3.99',
+                imagePath: 'assets/images/coriander_powder.jpg',
               ),
               _MostPurchasedCard(
                 name: 'Chili Powder',
                 weight: '250 g',
                 price: '3.99',
+                imagePath: 'assets/images/chili_powder.jpg',
               ),
             ],
           ),
@@ -56,11 +60,13 @@ class _MostPurchasedCard extends StatelessWidget {
   final String name;
   final String weight;
   final String price;
+  final String imagePath;
 
   const _MostPurchasedCard({
     required this.name,
     required this.weight,
     required this.price,
+    required this.imagePath,
   });
 
   @override
@@ -82,7 +88,7 @@ class _MostPurchasedCard extends StatelessWidget {
                     color: Colors.grey.shade200,
                   ),
 
-                  child: const Center(child: Icon(Icons.image, size: 40)),
+                  child: Image.asset(imagePath, fit: BoxFit.cover),
                 ),
               ),
 
