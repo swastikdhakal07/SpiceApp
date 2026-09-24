@@ -3,6 +3,7 @@ import '../widgets/product_card.dart';
 import '../data/products.dart';
 import '../models/product.dart';
 import '../widgets/most_purchased_section.dart';
+import '../widgets/category_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const MostPurchasedSection(),
+          const SizedBox(height: 20),
+          const CategorySection(),
           const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
