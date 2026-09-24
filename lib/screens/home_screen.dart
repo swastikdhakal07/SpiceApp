@@ -29,6 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //a small welcome message
+          const Padding(
+            padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
+            child: Text(
+              'Welcome to the Spice App!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ),
+
           const SpiceSearchBar(),
           const SizedBox(height: 24),
           const MostPurchasedSection(),
