@@ -4,6 +4,7 @@ import '../data/products.dart';
 import '../models/product.dart';
 import '../widgets/most_purchased_section.dart';
 import '../widgets/category_section.dart';
+import '../widgets/search_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,9 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SpiceSearchBar(),
+          const SizedBox(height: 24),
           const MostPurchasedSection(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
           const CategorySection(),
+          const SizedBox(height: 24),
           const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
