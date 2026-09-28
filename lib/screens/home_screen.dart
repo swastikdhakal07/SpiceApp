@@ -20,40 +20,42 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Spice App'),
+        title: const Text('Home'),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
         ],
       ),
 
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //a small welcome message
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
-            child: Text(
-              'Welcome to the Spice App!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //a small welcome message
+            const Padding(
+              padding: EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
+              child: Text(
+                'Welcome to the Spice App!',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
 
-          const SpiceSearchBar(),
-          const SizedBox(height: 24),
-          const MostPurchasedSection(),
-          const SizedBox(height: 24),
-          const CategorySection(),
-          const SizedBox(height: 24),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Our Products',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            const SpiceSearchBar(),
+            const SizedBox(height: 24),
+            const MostPurchasedSection(),
+            const SizedBox(height: 24),
+            const CategorySection(),
+            const SizedBox(height: 24),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Our Products',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
 
-          Expanded(
-            child: ListView.builder(
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.all(8.0),
               itemCount: products.length,
               itemBuilder: (context, index) {
@@ -71,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

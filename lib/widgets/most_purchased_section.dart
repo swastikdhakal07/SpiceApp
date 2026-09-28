@@ -19,7 +19,7 @@ class MostPurchasedSection extends StatelessWidget {
         const SizedBox(height: 12),
 
         SizedBox(
-          height: 160,
+          height: 150,
           child: ListView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 16.0),

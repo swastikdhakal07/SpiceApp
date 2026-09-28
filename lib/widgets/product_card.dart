@@ -18,18 +18,34 @@ class ProductCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
-        leading: IconButton(
-          onPressed: onAddToCart,
-          icon: const Icon(Icons.add_shopping_cart),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset(
+            product.imagePath,
+            width: 60,
+            height: 60,
+            fit: BoxFit.cover,
+          ),
         ),
         title: Text(
           product.name,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(product.weight),
-        trailing: Text(
-          '€${product.price}',
-          style: const TextStyle(fontWeight: FontWeight.bold),
+        trailing: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '€${product.price}',
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            IconButton(
+              onPressed: onAddToCart,
+              icon: const Icon(Icons.add_shopping_cart),
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(),
+            ),
+          ],
         ),
       ),
     );
