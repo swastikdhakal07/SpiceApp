@@ -3,6 +3,7 @@ class Product {
   final String weight;
   final double price;
   final String imagePath;
+  final String description;
 
   //named parameter constructor to make the code clearer
   const Product({
@@ -10,5 +11,6 @@ class Product {
     required this.weight,
     required this.price,
     required this.imagePath,
+    required this.description,
   });
 }

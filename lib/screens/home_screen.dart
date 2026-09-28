@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiceapp/screens/product_details_screen.dart';
 import '../widgets/product_card.dart';
 import '../data/products.dart';
 import '../models/product.dart';
@@ -67,6 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text('${products[index].name} added to cart'),
+                      ),
+                    );
+                  },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductDetailsScreen(product: products[index]),
                       ),
                     );
                   },
