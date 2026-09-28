@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spiceapp/screens/product_details_screen.dart';
+import 'package:spiceapp/screens/cart_screen.dart';
 import '../widgets/product_card.dart';
 import '../data/products.dart';
 import '../models/product.dart';
@@ -23,7 +24,17 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Home'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CartScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.shopping_cart),
+          ),
         ],
       ),
 
